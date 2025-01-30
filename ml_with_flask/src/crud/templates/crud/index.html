@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザーの一覧</title>
+  <link rel="stylesheet" href="{{ url_for('crud.static', filename='style.css') }}">
+</head>
+<body>
+  <h1>ユーザーの一覧</h1>
+
+  <a href="{{ url_for('crud.create_user') }}">ユーザー新規作成</a>
+
+  <table>
+    <tr>
+      <td>ユーザーID</td>
+      <td>ユーザー名</td>
+      <td>メールアドレス</td>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

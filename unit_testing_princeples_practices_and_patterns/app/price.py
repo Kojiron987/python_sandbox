@@ -14,3 +14,17 @@ class PriceEngine:
 
         return min(discount, Decimal(0.2))
 
+class Order:
+
+    def __init__(self):
+        self._products = list()
+
+
+    def add_product(self, product: Product) -> None:
+        self._products.append(product)
+
+
+    @property
+    def products(self):
+        return self._products
+
